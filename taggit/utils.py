@@ -20,6 +20,7 @@ def _parse_tags(tagstring):
     # Special case - if there are no commas or double quotes in the
     # input, we don't *do* a recall... I mean, we know we only need to
     # split on spaces.
+    tagstring = tagstring.replace(';', ',')
     if "," not in tagstring and '"' not in tagstring:
         words = list(set(split_strip(tagstring, " ")))
         words.sort()
